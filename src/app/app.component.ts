@@ -1,10 +1,11 @@
-import { Component } from '@angular/core';
+import { Component } from '@angular/core'
 
 @Component({
   selector: 'ace-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.styl']
+  template: `<div class="acedia-blog">
+    <ace-header></ace-header>
+    <router-outlet></router-outlet>
+    <ace-footer></ace-footer>
+  </div>`,
 })
-export class AppComponent {
-  title = 'acedia-blog';
-}
+export class AppComponent {}

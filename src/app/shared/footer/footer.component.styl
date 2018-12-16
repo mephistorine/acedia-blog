@@ -1,0 +1,40 @@
+.l-footer
+  max-height 60px
+  position fixed
+  bottom 0
+  width 100%
+  background-color var(--darken)
+  z-index 8989
+
+.footer-row
+  display flex
+  justify-content space-between
+  align-items center
+
+.footer-menu-list
+  display flex
+  width 100%
+  justify-content space-between
+
+.footer-menu-list-item
+  flex-grow 1
+  .button
+    width 100%
+    padding 1rem 0
+    color white
+  &:hover
+    .button
+      color var(--third)
+      background var(--mega-darken)
+
+.footer-menu
+  margin auto
+.footer-menu-list-link
+  display inline-block
+  padding 1rem 0
+  width 100%
+  text-align center
+  cursor pointer
+  &:hover
+    text-decoration none
+    background-color var(--darken)

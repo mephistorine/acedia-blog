@@ -1,1 +1,289 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css?family=PT+Sans|Playfair+Display')
+
+@import '../node_modules/minireset.css/minireset.min.css'
+@import '../node_modules/normalize.css/normalize.css'
+@import 'assets/fonts/icons/icons.css'
+
+.acedia-blog
+  --primary #6441a4
+  --secondary #2c2a4a
+  --third #7fdeff
+  --fourth #e1e1e1
+
+  --darken rgba(0, 0, 0, .1)
+  --mega-darken rgba(0, 0, 0, .2)
+  --font-size 24px
+
+  color var(--fourth)
+  font-family 'PT Sans', sans-serif
+  font-size var(--font-size)
+  font-display swap
+  line-height 1.2
+  padding-bottom 60px
+
+  &.light-theme
+    secondary #e1e1e1
+    fourth #2c2a4a
+
+html
+body
+  height 100%
+  background-color #2c2a4a
+
+h1, h2, h3, h4, h5, h6
+  font-family 'Playfair Display', serif
+  font-weight 400
+
+img
+  max-width 100%
+  height auto
+
+a
+  text-decoration none
+  --link-color #7fdeff
+  color var(--link-color)
+  &:hover
+    text-decoration underline
+
+button
+  cursor pointer
+
+blockquote
+  font-size 1.5em
+  padding 1rem
+  borderwidth 3px
+  borderstyle solid
+  background var(--mega-darken)
+  bordercolor var(--third)
+  cite
+    font-size .75em
+    opacity .75
+    &:before
+      content '—'
+
+figure
+  margin-bottom 2rem
+
+  figcaption
+    text-align center
+    color #898989
+
+  &.is-right-aligned
+    float right
+    margin-left 2rem
+
+  &.is-left-aligned
+    float left
+    margin-right 2rem
+
+.article-content
+  h2
+    font-size 1.5em
+    margin-top 0.83em
+    margin-bottom 0.83em
+  h3
+    font-size 1.17em
+    margin-top 1em
+    margin-bottom 1em
+  h4
+    font-size 1em
+    margin-top 1.33em
+    margin-bottom 1.33em
+  code
+    font-size .8em
+    background rgba(0, 0, 0, .2)
+    padding .2em
+  dd
+    margin-left 2rem
+  kbd
+    padding 5px
+    border-radius 5px
+    font-size .8em
+    background rgba(255, 255, 255, .1)
+    box-shadow 0 1px 2px 0 black
+  mark
+    padding 0 5px
+    border-radius 5px
+    font-size .8em
+    background-color #F1FF00
+
+.wrap
+  max-width 800px
+  margin 0 auto
+  position relative
+
+
+.article-content ul,
+.article-content ol
+  padding-left 2rem
+  listtype initial
+
+.article-content ul li,
+.article-content ol li
+  margin-bottom 1rem
+
+.article-content td,
+.article-content th
+  padding .5rem
+  border 1px solid white
+
+.button,
+.input
+  border none
+  background transparent
+  padding 0
+  margin 0
+
+
+.tag-list
+  display flex
+  li:not(:last-child)
+    margin-right .8rem
+  &::before
+    margin-right 10px
+    margin-top 5px
+
+.page-info
+  text-align center
+
+.link-list
+  display flex
+  li:not(:last-child)
+    margin-right 1rem
+  .is-donate-link
+    color tomato
+    &:hover
+      color #ff2700
+  a:hover
+    text-decoration none
+    color #00bdff
+
+
+.button
+  background transparent
+  border none
+  padding .5rem 1rem
+  color var(--fourth)
+
+
+.is-flex-row
+  display flex
+
+.is-article-wrap
+  max-width 1000px
+  & > *:not(img):not(picture):not(figure)
+    margin 0 10% 1rem 10%
+
+.is-item-active
+  .button
+    color var(--third)
+
+.is-single-article-title
+  flex-basis 100%
+
+.is-text-center
+  text-align center
+
+.is-button-full
+  width 100%
+
+
+.article
+  display flex
+  padding .5rem 1rem
+  margin 0 -1rem
+  &:not(:last-child)
+    borderwidth 1px
+    borderstyle solid
+    bordercolor #1f1d3f
+  &:hover
+    background-color rgba(0, 0, 0, .2)
+
+.article-link
+  display flex
+  justify-content space-between
+  align-items center
+  padding 1rem .5rem
+  color var(--fourth)
+  &:hover
+    text-decoration none
+
+.article-title
+  flex-grow 2
+
+.article-date-posting
+  font-size .75em
+
+.article-icon-wrap
+  margin-right 1rem
+
+.article-info-wrap
+  display flex
+  flex-grow 1
+  align-items center
+  justify-content space-between
+
+.article-icon
+  width 2.5rem
+  min-width 2.5rem
+
+@media screen and ( max-width: 768px )
+  .top-menu
+    flex-wrap wrap
+
+  .menu-list
+    margin-right .5rem
+
+  .search-section
+    flex-basis 100%
+    margin-top 1rem
+    .search-input
+      width 100%
+
+  .article-link
+    flex-wrap wrap
+    .article-date-posting
+      flex-basis 100%
+
+  .article
+    margin 0
+
+  .article-info-wrap
+    flex-direction column
+    align-items flex-start
+    justify-content flex-start
+
+  .is-single-article-date-posting,
+  .tag-list
+    flex-basis 100%
+
+@media screen and ( max-width: 560px )
+  .acedia-blog
+    overflow-x hidden
+  .footer-menu-list-item
+    .icon
+      margin 0
+      font-size 1.5rem
+    .button
+      span
+        font-size .8em
+  .is-article-wrap
+    & > :not(img):not(picture):not(figure)
+      margin 0 3vw 1rem 3vw
+  .article-info
+    .wrap
+      padding 0 3vw
+  .other-links-list
+    flex-direction column
+    align-items center
+    li
+      &:not(:last-child)
+        margin-right 0
+      &:not(:last-child):after
+        content ''
+
+@media screen and ( max-width: 560px )
+  figure.is-left-aligned,
+  figure.is-right-aligned
+    float none
+    text-align center

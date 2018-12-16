@@ -1,0 +1,22 @@
+.home-greeting
+  .wrap
+    min-height 200px
+    justify-content center
+    align-items center
+  h1
+    color var(--primary)
+.other-links-list
+  display flex
+  justify-content center
+  li
+    &:not(:last-child)
+      margin-right .5rem
+
+    &:not(:last-child):after
+      content '|'
+      display inline-block
+      margin-left .5rem
+.button-primary
+  background-color var(--primary)
+  &:hover
+    background-color #492e7a
